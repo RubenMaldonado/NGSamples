@@ -1,0 +1,26 @@
+<div class="ui raised segment">
+  <div class="page-header">
+    <h1>Youtube Search</h1>
+    <div *ngIf="loading">  Loading...</div>
+  </div>
+  
+  <div class="row">
+    <div class="input-group input-group-lg col-md-12">
+      <app-http-youtube-searchbox 
+        (loading)="loading = $event"
+        (results)="updateResults($event)"
+      >
+      </app-http-youtube-searchbox>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <app-http-youtube-search-result
+      *ngFor="let result of results"
+      [result]="result"
+    >
+    </app-http-youtube-search-result>
+  </div>
+
+</div>

@@ -1,0 +1,34 @@
+import {
+    Component,
+    ReflectiveInjector,
+    OnInit
+} from '@angular/core';
+
+import {UserService} from '../user.service';
+
+@Component({
+    selector: 'app-injector-demo',
+    templateUrl: './user-demo.component.html',
+    styleUrls: ['./user-demo.component.css']
+})
+export class UserDemoInjectorComponent{
+    userName: string;
+    userService: UserService;
+
+    constructor(){
+        const injector: any = ReflectiveInjector.resolveAndCreate([UserService]);
+
+        this.userService = injector.get(UserService);
+    }
+
+    signIn(): void{
+        this.userService.setUser({
+            name: 'Nate Murray'
+        });
+
+        this.userName = this.userService.getUser().name;
+        console.log('User name is: ', this.userName);
+    }
+
+}
+

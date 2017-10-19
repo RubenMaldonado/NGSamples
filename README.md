@@ -1,5 +1,9 @@
-# FormsDemo
+# Angular Demos
 
+## Objective
+Hello this is a simple project where I track all the practices about main features of angular. For the moment it will not have the best architecture but at least I will try to add descriptive names to the components in order to illustrate which angular feature Im highlighting in each one.
+
+## About Project 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.1.
 
 ## Development server
